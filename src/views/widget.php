@@ -27,11 +27,13 @@ if ($popup) {
 		<?php
 		foreach ($services as $name => $service) {
 			echo '<li class="eauth-service eauth-service-id-' . $service->id . '">';
-			echo '<span class="icon-' . $service->id . '"></span>';
-			echo Html::a($service->title, array($action, 'service' => $name), array(
+			/*echo Html::a($service->title, array($action, 'service' => $name), array(
 				'class' => 'eauth-service-link',
 				'data-eauth-service' => $service->id,
-			));
+			)); */
+			echo "<a class='eauth-service-link' href=\"/profile/default/login?service=$name\" data-eauth-service='$name'>$service->title";
+			echo '<span class="icon-' . $service->id . '"></span>';
+			echo "</a>";
 			echo '</li>';
 		}
 		?>
