@@ -31,9 +31,10 @@ if ($popup) {
 				'class' => 'eauth-service-link',
 				'data-eauth-service' => $service->id,
 			)); */
-			echo "<a class='eauth-service-link' href=\"/profile/default/login?service=$name\" data-eauth-service='$name'>$service->title";
+			if($service->id == 'google_oauth'){ $service->id = 'google-plus'; $service->title = 'Google plus'; }
+			echo "<a class='eauth-service-link' href=\"/profile/default/login?service=$name\" data-eauth-service='$name'>";
 			echo '<span class="icon-' . $service->id . '"></span>';
-			echo "</a>";
+			echo "Login with " .  $service->title . "</a>";
 			echo '</li>';
 		}
 		?>
