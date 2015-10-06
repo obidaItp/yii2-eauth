@@ -27,6 +27,7 @@ class GoogleOAuth2Service extends Service
 	 */
 
 	// Basic
+	
 	const SCOPE_EMAIL = 'email';
 	const SCOPE_PROFILE = 'profile';
 
@@ -116,6 +117,15 @@ class GoogleOAuth2Service extends Service
 
 		$this->attributes['id'] = $info['id'];
 		$this->attributes['name'] = $info['name'];
+		$this->attributes['f_name'] = $info['given_name'];
+		$this->attributes['l_name'] = $info['family_name'];
+		$this->attributes['gender'] = $info['gender'];
+		
+		$this->attributes['email'] = '' ;
+		if(isset($info['email']))
+		{
+			$this->attributes['email'] = $info['email'];
+		}
 
 		if (!empty($info['link'])) {
 			$this->attributes['url'] = $info['link'];
