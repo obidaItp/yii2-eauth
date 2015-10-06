@@ -54,10 +54,17 @@ class FacebookOAuth2Service extends Service
 			'username' => "",
 			"f_name" => $info['first_name'],
 			"l_name" => $info['last_name'],
-			"email" => $info['email'],
+			//"email" => $info['email'],
 			'gender'=>$info['gender'],
 			"profile" => $info
 		];
+		
+		$this->attributes['email'] = '' ;
+
+		if(isset($info['email']))
+		{
+			$this->attributes['email'] = $info['email'];
+		}
 		/*$this->attributes['id'] = $info['id'];
 		$this->attributes['name'] = $info['name'];
 		$this->attributes['url'] = $info['link']; */
