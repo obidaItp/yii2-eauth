@@ -25,7 +25,7 @@ class EAuth extends Object
 	/**
 	 * @var array Authorization services and their settings.
 	 */
-	protected $services = array();
+	public $services = array();
 
 	/**
 	 * @var boolean Whether to use popup window for the authorization dialog.
