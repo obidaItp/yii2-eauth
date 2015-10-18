@@ -49,7 +49,24 @@ class FacebookOAuth2Service extends Service
 	protected function fetchAttributes()
 	{
 		$info = $this->makeSignedRequest('me');
-		$this->attributes = [
+		
+		$this->attributes['id'] = '' ;
+		if(isset($info['id']))
+		{$this->attributes['id'] = $info['id'];}
+		$this->attributes['f_name'] = '';
+		if(isset($info['first_name']))
+		{$this->attributes['f_name'] = $info['first_name'];}
+		$this->attributes['l_name'] = '';
+		if(isset($info['last_name']))
+		{$this->attributes['l_name'] = $info['last_name'];}
+		$this->attributes['gender'] = '';
+		if(isset($info['gender']))
+		{$this->attributes['gender'] = $info['gender'];}
+		$this->attributes['profile'] = '';
+		if(isset($info))
+		{$this->attributes['profile'] = $info;}
+		
+		/*$this->attributes = [
 			"id" => $info['id'],
 			'username' => "",
 			"f_name" => $info['first_name'],
@@ -57,7 +74,7 @@ class FacebookOAuth2Service extends Service
 			//"email" => $info['email'],
 			'gender'=>$info['gender'],
 			"profile" => $info
-		];
+		]; */
 		
 		$this->attributes['email'] = '' ;
 
