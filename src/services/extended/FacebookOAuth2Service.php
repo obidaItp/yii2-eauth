@@ -12,7 +12,7 @@ namespace nodge\eauth\services\extended;
 class FacebookOAuth2Service extends \nodge\eauth\services\FacebookOAuth2Service
 {
 
-	protected $scopes = array(
+	public $scopes = array(
 		self::SCOPE_EMAIL,
 		self::SCOPE_USER_BIRTHDAY,
 		self::SCOPE_USER_HOMETOWN,
