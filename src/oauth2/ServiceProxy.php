@@ -25,7 +25,7 @@ class ServiceProxy extends AbstractService
 	/**
 	 * @var Service the currently used service class
 	 */
-	protected $service;
+	public $service;
 
 	/**
 	 * @param CredentialsInterface $credentials
