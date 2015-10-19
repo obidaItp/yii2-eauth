@@ -105,8 +105,8 @@ class GoogleOAuth2Service extends Service
 	protected $type = 'OAuth2';
 	protected $jsArguments = array('popup' => array('width' => 500, 'height' => 450));
 
-	protected $scopes = array(self::SCOPE_USERINFO_PROFILE);
-	protected $providerOptions = array(
+	public $scopes = array(self::SCOPE_USERINFO_PROFILE);
+	public $providerOptions = array(
 		'authorize' => 'https://accounts.google.com/o/oauth2/auth',
 		'access_token' => 'https://accounts.google.com/o/oauth2/token',
 	);
