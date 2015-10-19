@@ -36,8 +36,8 @@ class FacebookOAuth2Service extends Service
 	protected $type = 'OAuth2';
 	protected $jsArguments = array('popup' => array('width' => 585, 'height' => 290));
 
-	protected $scopes = array();
-	protected $providerOptions = array(
+	public $scopes = array();
+	public $providerOptions = array(
 		'authorize' => 'https://www.facebook.com/dialog/oauth',
 		'access_token' => 'https://graph.facebook.com/oauth/access_token',
 	);
