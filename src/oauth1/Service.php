@@ -30,17 +30,17 @@ abstract class Service extends ServiceBase implements IAuthService
 	/**
 	 * @var string OAuth2 client id.
 	 */
-	protected $key;
+	public $key;
 
 	/**
 	 * @var string OAuth2 client secret key.
 	 */
-	protected $secret;
+	public $secret;
 
 	/**
 	 * @var array Provider options. Must contain the keys: request, authorize, access.
 	 */
-	protected $providerOptions = array(
+	public $providerOptions = array(
 		'request' => '',
 		'authorize' => '',
 		'access' => '',
