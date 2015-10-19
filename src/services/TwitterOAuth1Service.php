@@ -28,7 +28,7 @@ class TwitterOAuth1Service extends Service
 	protected $type = 'OAuth1';
 	protected $jsArguments = array('popup' => array('width' => 900, 'height' => 550));
 
-	protected $providerOptions = array(
+	public $providerOptions = array(
 		'request' => 'https://api.twitter.com/oauth/request_token',
 		'authorize' => 'https://api.twitter.com/oauth/authenticate', //https://api.twitter.com/oauth/authorize
 		'access' => 'https://api.twitter.com/oauth/access_token',
