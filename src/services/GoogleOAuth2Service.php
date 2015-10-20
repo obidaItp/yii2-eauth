@@ -119,7 +119,12 @@ class GoogleOAuth2Service extends Service
 		$this->attributes['name'] = $info['name'];
 		$this->attributes['f_name'] = $info['given_name'];
 		$this->attributes['l_name'] = $info['family_name'];
-		$this->attributes['gender'] = $info['gender'];
+		
+		$this->attributes['gender'] = '' ;
+		if(isset($info['gender']))
+		{
+			$this->attributes['gender'] = $info['gender'];	
+		}
 		
 		$this->attributes['email'] = '' ;
 		if(isset($info['email']))
