@@ -32,7 +32,7 @@ class FacebookOAuth2Service extends Service
 	const SCOPE_USER_PHOTOS = 'user_photos';
 
 	protected $name = 'facebook';
-	protected $title = 'Facebook';
+	protected $title = 'Facebook'; 
 	protected $type = 'OAuth2';
 	protected $jsArguments = array('popup' => array('width' => 585, 'height' => 290));
 
