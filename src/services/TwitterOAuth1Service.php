@@ -39,7 +39,7 @@ class TwitterOAuth1Service extends Service
 	/**
 	 * @return bool
 	 */
-	protected function fetchAttributes()
+	public function fetchAttributes()
 	{
 		$info = $this->makeSignedRequest('account/verify_credentials.json');
 
