@@ -59,6 +59,12 @@ class FacebookOAuth2Service extends Service
 		$this->attributes['l_name'] = '';
 		if(isset($info['last_name']))
 		{$this->attributes['l_name'] = $info['last_name'];}
+		if(!isset($info['first_name']) && !isset($info['last_name']) && isset($info['name']))
+                {
+                  $name = explode(' ',$info['name']);
+                  $this->attributes['f_name'] = $name[0];
+                  $this->attributes['l_name'] = $name[1];
+                }
 		$this->attributes['gender'] = '';
 		if(isset($info['gender']))
 		{$this->attributes['gender'] = $info['gender'];}
