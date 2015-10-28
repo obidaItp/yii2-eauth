@@ -120,7 +120,8 @@ abstract class ServiceBase extends Object implements IAuthService
 		$this->setRedirectUrl(Yii::$app->getUser()->getReturnUrl());
 
 		$service = Yii::$app->getRequest()->getQueryParam('service');
-		$cancelUrl = Url::to(['', 'service' => $service], true);
+		//$cancelUrl = Url::to(['', 'service' => $service], true);
+		$cancelUrl = Url::to(Yii::$app->user->loginUrl + ['service' => $service], true);
 
 		$this->setCancelUrl($cancelUrl);
 	}
